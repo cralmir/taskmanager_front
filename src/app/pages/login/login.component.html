@@ -1,0 +1,32 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Task Manager</mat-card-title>
+      <mat-card-subtitle>Please enter your email</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <form [formGroup]="loginForm">
+        <mat-form-field appearance="fill" class="">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')"
+            >Email is required</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')"
+            >Invalid email</mat-error
+          >
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="loginForm.invalid"
+        (click)="onSubmit()"
+      >
+        Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

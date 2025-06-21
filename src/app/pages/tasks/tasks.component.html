@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <span>Task Manager</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    (click)="addNewTask()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    (click)="logout()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="tasks-content">
+  <app-task-item
+    *ngFor="let task of taskList"
+    [task]="task"
+    (taskUpdated)="loadTasks()"
+  />
+</div>

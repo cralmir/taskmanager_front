@@ -1,0 +1,31 @@
+.task-card {
+  /* display: flex;
+  flex-direction: row; */
+  /* height: 300px; o el alto que quieras que tenga la card */
+  min-width: 250px;
+  min-height: 200px;
+}
+
+.task-footer {
+  padding: 16px;
+}
+.card-actions {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 16px;
+  bottom: 0;
+  top: auto;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.completed {
+  background-color: tomato;
+}
+
+.task-content {
+  flex-grow: 1;
+}

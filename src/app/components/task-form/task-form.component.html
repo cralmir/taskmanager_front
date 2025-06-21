@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Crear tarea</h1>
+<mat-card mat-dialog-content class="">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+      <mat-error *ngIf="taskForm.get('title')?.hasError('required')"
+        >Title is required</mat-error
+      >
+      <mat-error *ngIf="taskForm.get('title')?.hasError('title')"
+        >Invalid title</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="taskForm.get('description')?.hasError('required')"
+        >Description is required</mat-error
+      >
+      <mat-error *ngIf="taskForm.get('description')?.hasError('description')"
+        >Invalid description</mat-error
+      >
+    </mat-form-field>
+    <!-- <mat-form-field appearance="fill" class="">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title"  />
+      <mat-error *ngIf="taskForm.get('title')?.hasError('required')"
+        >Title is required</mat-error
+      >
+      <mat-error *ngIf="taskForm.get('title')?.hasError('title')"
+        >Invalid title</mat-error
+      >
+    </mat-form-field> -->
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="taskForm.invalid"
+    >
+      Save
+    </button>
+    <!-- <button mat-raised-button color="primary" (click)="onClose()">
+      Cancel
+    </button> -->
+  </form>
+</mat-card>

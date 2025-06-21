@@ -1,0 +1,41 @@
+<mat-card
+  class="task-card"
+  [class.completed]="task.completed"
+  appearance="outlined"
+>
+  <mat-card-header>
+    <mat-card-title>{{ task.title }}</mat-card-title>
+    <mat-card-subtitle>{{ formatDate() }}</mat-card-subtitle>
+    <span class="example-spacer"></span>
+    <mat-slide-toggle
+      [checked]="task.completed"
+      [disabled]="isLoading"
+      (change)="setTaskAsCompleted($event)"
+    ></mat-slide-toggle>
+  </mat-card-header>
+  <mat-card-content class="task-content">
+    <p>
+      {{ task.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <button
+      *ngIf="!task.completed"
+      mat-raised-button
+      extended
+      (click)="updateTask()"
+    >
+      <mat-icon>edit</mat-icon>
+      Edit
+    </button>
+    <button
+      mat-raised-button
+      extended
+      [disabled]="isLoadingDelete"
+      (click)="deleteTask()"
+    >
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,19 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+}
+
+.card-content {
+  padding: 20px 20px 0 20px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
