@@ -29,3 +29,8 @@
 .task-content {
   flex-grow: 1;
 }
+
+.description {
+  overflow: scroll;
+  padding: 10px;
+}

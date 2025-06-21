@@ -64,7 +64,7 @@ export class TasksComponent {
       data: {
         mode: 'add',
       },
-      width: '300px',
+      width: '500px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

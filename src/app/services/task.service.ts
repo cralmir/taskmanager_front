@@ -8,7 +8,7 @@ import { Task } from '../types/task';
 export class TaskService {
   private readonly http = inject(HttpClient);
   private readonly base_url =
-    'http://127.0.0.1:5001/taskmanager-1d0a1/us-central1/api';
+    'https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api';
 
   getTasksByUser() {
     return this.http.get<Task[]>(`${this.base_url}/task`);

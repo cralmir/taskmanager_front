@@ -48,7 +48,7 @@ export class TaskItemComponent {
         mode: 'update',
         task: this.task,
       },
-      width: '300px',
+      width: '500px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

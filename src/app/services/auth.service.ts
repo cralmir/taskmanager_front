@@ -10,7 +10,7 @@ export class AuthService {
   private readonly http = inject(HttpClient);
   private readonly router = inject(Router);
   private readonly base_url =
-    'http://127.0.0.1:5001/taskmanager-1d0a1/us-central1/api';
+    'https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api';
 
   private tokenKey = 'auth_token';
 
@@ -27,7 +27,7 @@ export class AuthService {
   register(email: string) {
     return this.http
       .post<{ token: string }>(`${this.base_url}/register`, {
-        email: 'juasn@mail.com',
+        email,
       })
       .pipe(
         tap((response) => {

@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Crear tarea</h1>
 <mat-card mat-dialog-content class="">
-  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <form class="taskForm" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill" class="">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
